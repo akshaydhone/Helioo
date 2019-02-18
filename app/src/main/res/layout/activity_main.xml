@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mst1"
     tools:context="io.github.raamish.helio.MainActivity">
 
 
@@ -18,19 +19,22 @@
     </RelativeLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Started"
-        android:textSize="20dp"
         android:id="@+id/button"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp" />
+        android:layout_marginTop="90dp"
+        android:background="#f60909"
+        android:text="Get Started"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi There! Meet your new Virtual Assistant Helio. It is a complete speech based intelligent system where you just have to ask Helio and it will take care of everything ."
+        android:text="Hi There! Meet your new Virtual Assistant Sneako. It is a complete speech based intelligent system where you just have to ask sneako and it will take care of everything ."
         android:textSize="20dp"
         android:fontFamily="monospace"
         android:paddingTop="70dp"

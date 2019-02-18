@@ -103,7 +103,7 @@ public class Main_Menu extends AppCompatActivity {
     }
 
     public void activityDescribe(View v) {
-        Intent intent = new Intent(this, DescribeActivity.class);
+        Intent intent = new Intent(this, ScanActivity.class);
         startActivity(intent);
     }
 

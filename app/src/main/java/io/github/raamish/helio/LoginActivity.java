@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                 EditText password = (EditText)findViewById(R.id.input_password);
                 TextView textbox = (TextView)findViewById(R.id.link_signup);
 
-                if((email.getText().toString().equals("raamish")) && (password.getText().toString().equals("raamish")))
+                if((email.getText().toString().equals("admin")) && (password.getText().toString().equals("admin")))
                     {
                         Toast.makeText(getBaseContext(), "Login successful", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(LoginActivity.this, Main_Menu.class);

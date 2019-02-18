@@ -1,7 +1,11 @@
 package io.github.raamish.helio;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,8 +18,10 @@ import android.widget.Toast;
 public class CallActivity extends AppCompatActivity {
     String number;
     private Toolbar mToolbar;
+
+    @SuppressLint("MissingSuperCall")
     @Override
-    protected  void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main__menu);
 
@@ -29,12 +35,22 @@ public class CallActivity extends AppCompatActivity {
 
     }
 
-    public void callNumber (String number) {
+    public void callNumber(String number) {
         Intent phoneIntent = new Intent(Intent.ACTION_CALL);
         phoneIntent.setData(Uri.parse("tel:" + number));
 
 
         try {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
             startActivity(phoneIntent);
             Toast.makeText(this, "Calling ",Toast.LENGTH_SHORT).show();
 
